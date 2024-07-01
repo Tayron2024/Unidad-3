@@ -1,0 +1,42 @@
+/**
+ * @file 5.Inversa.c
+ * @author Tayron Morales (mtyaronfernando@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-07-01
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    printf("Ingrese el tamanio de la matriz cuadrada: ");
+    scanf("%d", &n);
+
+    // Definir la matriz con el tamaño ingresado por el usuario
+    int matriz[n][n];
+
+    // Pedir al usuario que ingrese los valores de la matriz
+    printf("Ingrese los elementos de la matriz:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("Elemento (%d, %d): ", i + 1, j + 1);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Imprimir la matriz inversa
+    printf("\nMatriz inversa:\n");
+    for (int i = n - 1; i >= 0; i--) {
+        for (int j = n - 1; j >= 0; j--) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
