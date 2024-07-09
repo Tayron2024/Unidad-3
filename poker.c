@@ -1,3 +1,14 @@
+/**
+ * @file 14.cartas.c
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2024-07-03
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -13,9 +24,13 @@ typedef struct {
     int palo;
 } Carta;
 
+// Nombres de los palos
+const char *nombres_palos[NUM_PALOS] = {"Corazones", "Diamantes", "Picas", "Tréboles"};
+
 void inicializarBaraja(Carta baraja[]);
 void barajar(Carta baraja[]);
 void repartir(Carta baraja[], Carta manos[][CARTAS_POR_JUGADOR]);
+void imprimirManos(Carta manos[][CARTAS_POR_JUGADOR]);
 
 int main() {
     Carta baraja[NUM_CARTAS];
@@ -26,14 +41,7 @@ int main() {
     inicializarBaraja(baraja);
     barajar(baraja);
     repartir(baraja, manos);
-
-    for (int i = 0; i < NUM_JUGADORES; i++) {
-        printf("Jugador %d:\n", i + 1);
-        for (int j = 0; j < CARTAS_POR_JUGADOR; j++) {
-            printf("Carta %d: Valor %d, Palo %d\n", j + 1, manos[i][j].valor, manos[i][j].palo);
-        }
-        printf("\n");
-    }
+    imprimirManos(manos);
 
     return 0;
 }
@@ -62,5 +70,16 @@ void repartir(Carta baraja[], Carta manos[][CARTAS_POR_JUGADOR]) {
         for (int j = 0; j < CARTAS_POR_JUGADOR; j++) {
             manos[i][j] = baraja[cartaActual++];
         }
+    }
+}
+
+void imprimirManos(Carta manos[][CARTAS_POR_JUGADOR]) {
+    for (int i = 0; i < NUM_JUGADORES; i++) {
+        printf("Jugador %d:\n", i + 1);
+        printf("-----------------\n");
+        for (int j = 0; j < CARTAS_POR_JUGADOR; j++) {
+            printf("Carta %d: Valor %d, %s\n", j + 1, manos[i][j].valor, nombres_palos[manos[i][j].palo]);
+        }
+        printf("\n");
     }
 }
