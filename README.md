@@ -39,3 +39,9 @@ https://github.com/Tayron2024/Unidad-3/blob/2d1257d3b9bfda3e0372987baeb0e67f9c84
 
 **13. potencia de matrices**
 https://github.com/Tayron2024/Unidad-3/blob/2d1257d3b9bfda3e0372987baeb0e67f9c8476c4/13.potencia.c
+
+**14. Poker**
+https://github.com/Tayron2024/Unidad-3/blob/51fbbe31e495bd8eb13a968562c1db81187e5399/poker.c
+
+**15. e en Raya**
+https://github.com/Tayron2024/Unidad-3/blob/229d5ae46c2171aee19b88059a3e27ed0c14215d/3raya.c
